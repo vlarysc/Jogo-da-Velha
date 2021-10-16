@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Jogo da Velha</title>
+  </head>
+  <body>
+    <div class="baba">
+      <h1>Jogo da Velha</h1>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="card container">
+        <div>
+          <div id="jogo" class="game container">
+            <div class="row">
+              <div
+                class="col-4 border-end"
+                id="celula1"
+                onclick="game(1)"
+              ></div>
+              <div
+                class="col-4 border-end"
+                id="celula2"
+                onclick="game(2)"
+              ></div>
+              <div class="col-4" id="celula3" onclick="game(3)"></div>
+            </div>
+            <div class="row">
+              <div
+                class="col-4 border-top border-end"
+                id="celula4"
+                onclick="game(4)"
+              ></div>
+              <div
+                class="col-4 border-top border-end"
+                id="celula5"
+                onclick="game(5)"
+              ></div>
+              <div
+                class="col-4 border-top"
+                id="celula6"
+                onclick="game(6)"
+              ></div>
+            </div>
+            <div class="row">
+              <div
+                class="col-4 border-top border-end"
+                id="celula7"
+                onclick="game(7)"
+              ></div>
+              <div
+                class="col-4 border-top border-end"
+                id="celula8"
+                onclick="game(8)"
+              ></div>
+              <div
+                class="col-4 border-top"
+                id="celula9"
+                onclick="game(9)"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="placar">
+        <div class="elemento jogadorAtual" id="placar1">
+          <div class="x">X</div>
+          <div class="jogador">Jogador: 1</div>
+          <div class="pontuacao" id="potuacaoPlay1">Pontos: 1</div>
+        </div>
+        <div class="elemento" id="placar2">
+          <div class="x">O</div>
+          <div class="jogador">Jogador: 2</div>
+          <div class="pontuacao" id="potuacaoPlay">Pontos: 0</div>
+        </div>
+
+        <div class="rodada" id="rodada">Rodada: 3</div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
