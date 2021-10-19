@@ -10,6 +10,7 @@ let celula9 = document.getElementById("celula9");
 let potuacaoPlay1 = document.getElementById("potuacaoPlay1");
 let potuacaoPlay2 = document.getElementById("potuacaoPlay2");
 let round = document.getElementById("rodada");
+let celulas = document.querySelectorAll(".celula");
 
 let rodadaAtual = 0;
 
@@ -17,6 +18,19 @@ let jogador1 = [];
 let jogador2 = [];
 
 let jogadorAtual = 0;
+
+celulas.forEach((element) => {
+  element.addEventListener("click", function (event) {
+    if (jogadorAtual == 1) {
+      event.target.innerHTML = "o";
+      /* jogador1.push(id); */
+    } else {
+      event.target.innerHTML = "x";
+      /* jogador2.push(id); */
+    }
+    atualizarJogador();
+  });
+});
 
 function jogadorSelecionado() {
   let placar1 = document.getElementById("placar1");
@@ -33,32 +47,21 @@ function jogadorSelecionado() {
 
 function atualizarJogador() {
   jogadorSelecionado();
-  jogadorAtual++;
-  jogadorAtual % 2 == 0 ? (jogadorAtual = 2) : (jogadorAtual = 1);
+  jogadorAtual == 1 ? (jogadorAtual = 2) : (jogadorAtual = 1);
 }
 
-function marcarCelula(id) {
-  var el = document.getElementById("jogo");
-  el.addEventListener("click", function (e) {
-    let res = e.target.id;
-    /*  if (jogadorAtual == 1) {
-      res.innerHTML = "x";
-      jogador1.push(id);
-    } else {
-      res.innerHTML = "o";
-      jogador2.push(id);
-    } */
+function marcarCelula(id, ev) {
+  if (jogadorAtual == 1) {
+    celula1.innerHTML = "x";
+    jogador1.push(id);
+  } else {
+    celula1.innerHTML = "o";
+    jogador2.push(id);
+  }
 
-    console.log(res);
-  });
+  console.log(res);
 
   console.log(id);
-}
-
-function game(id) {
-  atualizarJogador();
-  marcarCelula(id);
-  /* console.log(id, jogadorAtual); */
 }
 
 /* Inicia com  o jogador 1 */
